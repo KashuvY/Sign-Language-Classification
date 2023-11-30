@@ -3,16 +3,20 @@ import tensorflow as tf
 from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import LabelBinarizer
 
-def test(data, labels):
+def test(data_test_file_path, labels_test_file_path):
+    # load data
+    data_test = np.load(data_test_file_path)
+    labels_test = np.load(labels_test_file_path)
+    
     # Load best model
     best_model = tf.keras.models.load_model('best_model_resnet.h5')
 
     # Reshape the data
-    X_test = data.T.reshape(-1, 300, 300, 3)
+    X_test = data_test.T.reshape(-1, 300, 300, 3)
 
     # Label encoding
     lb = LabelBinarizer()
-    y_test = lb.fit_transform(labels)
+    y_test = lb.fit_transform(labels_test)
 
     # Predictions
     predictions = best_model.predict(X_test)
