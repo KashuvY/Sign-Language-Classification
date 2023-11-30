@@ -60,6 +60,8 @@ Below is a list of libraries, packages, and other dependencies required to run t
   
 ### Installation
 
+If the project is going to be ran outside HiPerGator, follow the instructions below to create the appropriate environment.
+
 1. Clone the repo
    ```sh
    git clone https://github.com/UF-FundMachineLearning-Fall23/final-project-code-report-team-jyr.git
@@ -84,17 +86,17 @@ Below is a list of libraries, packages, and other dependencies required to run t
 
 To use this model, follow these steps:
 
-1. **Open the Notebook**: Navigate and open the `execution.ipynb` file in this repository with a `tensorflow` kernel.
+1. **Open the Notebook**: Navigate and open the `execution.ipynb` file in this repository with the `tensorflow-2.7.0` kernel on HiPerGator.
 
-2. **Run the Cells**: Execute the cells in the notebook in order. These cells encompass the necessary code for model execution and result visualization.
-
-3. **Update File Paths**: It is essential to replace the default file paths in the notebook with the paths to your specific test data and test labels. Ensure these paths correctly point to your files.
+2.  **Update File Paths**: It is essential to replace the default file paths in the notebook with the paths to your specific test data and test labels. Ensure these paths correctly point to your files.
 
     Example:
     ```python
     data_test_file_path = "path/to/your/test_data.npy"
     labels_test_file_path = "path/to/your/test_labels.npy"
     ```
+
+3. **Run the Cell**: Execute the cell in the notebook to run the test file. This cells encompass the necessary code for model execution and result visualization.
 
 4. **Review and Analyze**: Use the `accuracy`, and `predicted_labels` variables to evaluate the model against the test set.
 

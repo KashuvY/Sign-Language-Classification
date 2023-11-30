@@ -51,12 +51,12 @@ def train():
     model.compile(optimizer=Adam(learning_rate=1e-4), loss='categorical_crossentropy', metrics=['accuracy'])
 
     # Callbacks
-    early_stopping = EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
+    early_stopping = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
     reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.2, patience=5)
     checkpoint = ModelCheckpoint('best_model_resnet.h5', monitor='val_loss', save_best_only=True)
 
     # Training
-    model.fit(X_train, y_train, epochs=50, validation_data=(X_test, y_test), callbacks=[early_stopping, reduce_lr, checkpoint])
+    model.fit(X_train, y_train, epochs=20, validation_data=(X_test, y_test), callbacks=[early_stopping, reduce_lr, checkpoint])
 
     # Saving best model
     best_model = tf.keras.models.load_model('best_model_resnet.h5')
