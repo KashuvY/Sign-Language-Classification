@@ -19,10 +19,10 @@ def train():
 
     # Split and reshape the data
     train_df, test_df, train_df_labels, test_df_labels = train_test_split(data_train,
-                                                                        labels_train,
-                                                                        test_size=0.2,
-                                                                        random_state=42
-                                                                        )
+                                                                          labels_train,
+                                                                          test_size=0.2,
+                                                                          random_state=42
+                                                                          )
     X_train = train_df.reshape(-1, 300, 300, 3)
     X_test = test_df.reshape(-1, 300, 300, 3)
 
@@ -31,7 +31,7 @@ def train():
     y_train = lb.fit_transform(train_df_labels)
     y_test = lb.transform(test_df_labels)
 
-    # Model below
+    # Model
 
     # initialize and activate base model of ResNet50
     base_model = ResNet50(weights='imagenet', include_top=False, input_shape=(300, 300, 3))
