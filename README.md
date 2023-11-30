@@ -82,9 +82,6 @@ Below is a list of libraries, packages, and other dependencies required to run t
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-<!-- USAGE EXAMPLES -->
-## Usage
-
 To use this model, follow these steps:
 
 1. **Open the Notebook**: Navigate and open the `execution.ipynb` file in this repository.
@@ -105,6 +102,6 @@ To use this model, follow these steps:
 <!-- Authors -->
 ## Authors
 
-Jorge Moros
-Rashi Ghosh
-Youval Kashuv
+* Jorge Moros
+* Rashi Ghosh
+* Youval Kashuv
