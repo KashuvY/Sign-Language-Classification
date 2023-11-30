@@ -84,7 +84,7 @@ Below is a list of libraries, packages, and other dependencies required to run t
 
 To use this model, follow these steps:
 
-1. **Open the Notebook**: Navigate and open the `execution.ipynb` file in this repository.
+1. **Open the Notebook**: Navigate and open the `execution.ipynb` file in this repository with a `tensorflow` kernel.
 
 2. **Run the Cells**: Execute the cells in the notebook in order. These cells encompass the necessary code for model execution and result visualization.
 
