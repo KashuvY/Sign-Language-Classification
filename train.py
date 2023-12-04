@@ -5,7 +5,7 @@ from sklearn.preprocessing import LabelBinarizer
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import (Conv2D, MaxPooling2D, Flatten, Dense, Dropout,
                                      GlobalAveragePooling2D, BatchNormalization)
-from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.optimizers import Nadam
 from tensorflow.keras.applications import ResNet50
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
@@ -20,16 +20,16 @@ def train():
     # Split and reshape the data
     train_df, test_df, train_df_labels, test_df_labels = train_test_split(data_train,
                                                                           labels_train,
-                                                                          test_size=0.2,
+                                                                          test_size=0.3,
                                                                           random_state=42
                                                                           )
     X_train = train_df.reshape(-1, 300, 300, 3)
-    X_test = test_df.reshape(-1, 300, 300, 3)
+    X_val = test_df.reshape(-1, 300, 300, 3)
 
     # Label encoding
     lb = LabelBinarizer()
     y_train = lb.fit_transform(train_df_labels)
-    y_test = lb.transform(test_df_labels)
+    y_val = lb.transform(test_df_labels)
 
     # Model
 
@@ -48,15 +48,15 @@ def train():
     ])
 
     # Compiling model
-    model.compile(optimizer=Adam(learning_rate=1e-4), loss='categorical_crossentropy', metrics=['accuracy'])
+    model.compile(optimizer=Nadam(learning_rate=1e-4), loss='categorical_crossentropy', metrics=['accuracy'])
 
     # Callbacks
-    early_stopping = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
-    reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.2, patience=5)
+    early_stopping = EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
+    reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=5)
     checkpoint = ModelCheckpoint('best_model_resnet.h5', monitor='val_loss', save_best_only=True)
 
     # Training
-    model.fit(X_train, y_train, epochs=20, validation_data=(X_test, y_test), callbacks=[early_stopping, reduce_lr, checkpoint])
+    model.fit(X_train, y_train, epochs=50, batch_size=16, validation_data=(X_val, y_val), callbacks=[early_stopping, reduce_lr, checkpoint])
 
     # Saving best model
     best_model = tf.keras.models.load_model('best_model_resnet.h5')
