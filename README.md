@@ -52,7 +52,7 @@ Below is a list of libraries, packages, and other dependencies required to run t
   ```
 * tensorflow
   ```sh
-    pip install tensorflow
+    pip install tensorflow==2.14
   ```
 * scikit-learn
   ```sh
@@ -88,7 +88,7 @@ If the project is going to be ran outside HiPerGator, follow the instructions be
 To use this model, follow these steps:
 
 1. **Download Model (.h5) file**: Download ["best_model_resnet.h5"](https://uflorida-my.sharepoint.com/:u:/g/personal/rashighosh_ufl_edu/EcLUUC2puhNCnz1ib9AOJ2gBgjWzHbVlFdiHi-voO0lMCw?e=9rtgQi) and add to the same folder where you are running the notebook.
-2. **Open the Notebook**: Navigate and open the `execution.ipynb` file in this repository with the `tensorflow-2.7.0` kernel on HiPerGator.
+2. **Open the Notebook**: Navigate and open the `execution.ipynb` file in this repository with the `tensorflow-2.14` kernel on HiPerGator.
 
 3. **Place the best_model_resnet.h5 in the root directory.** It is important to keep this file in the root directory (same directory level as where the `execution.ipynb` is located).
 
