@@ -53,7 +53,7 @@ def train():
     # Callbacks
     early_stopping = EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
     reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=5)
-    checkpoint = ModelCheckpoint('best_model_resnet.h5', monitor='val_loss', save_best_only=True)
+    checkpoint = ModelCheckpoint('best_model_extra_credit.h5', monitor='val_loss', save_best_only=True)
 
     # Training
     model.fit(X_train, y_train, epochs=50, batch_size=16, validation_data=(X_val, y_val), callbacks=[early_stopping, reduce_lr, checkpoint])
