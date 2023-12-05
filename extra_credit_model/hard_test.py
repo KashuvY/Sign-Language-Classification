@@ -27,8 +27,6 @@ def test(data_test_file_path, labels_test_file_path):
     confident_mask = np.max(predictions, axis=1) >= threshold
     predicted_labels[~confident_mask] = -1  # Assign -1 for "unknown" predictions
 
-    # Adjust accuracy calculation to ignore unknown predictions
-    mask = predicted_labels != -1
-    accuracy = accuracy_score(np.argmax(y_test[mask], axis=1), predicted_labels[mask])
+    accuracy = accuracy_score(np.argmax(y_test, axis=1), predicted_labels)
 
     return accuracy, predicted_labels
