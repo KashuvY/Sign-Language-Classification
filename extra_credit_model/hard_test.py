@@ -11,7 +11,7 @@ def test(data_test_file_path, labels_test_file_path):
     labels_test = np.load(labels_test_file_path)
     
     # Load best model
-    best_model = tf.keras.models.load_model('best_model_resnet.h5')
+    best_model = tf.keras.models.load_model('best_model_extra_credit.h5')
 
     # Reshape the data
     X_test = data_test.T.reshape(-1, 300, 300, 3)
