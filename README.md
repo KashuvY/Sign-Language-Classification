@@ -24,7 +24,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#extraCredit">Extra Credit</a></li>
+    <li><a href="#extra-credit">Extra Credit</a></li>
     <li><a href="#authors">Authors</a></li>
   </ol>
 </details>
