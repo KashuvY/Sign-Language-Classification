@@ -108,12 +108,12 @@ To use this model, follow these steps:
 <!-- Extra Credit EXAMPLES -->
 ## Extra Credit
 
-To use this model, follow the exact same steps as above in "Usage" but in the "extra_credit" folder:
+To use this model, follow the exact same steps as above in "Usage" but in the "extra_credit_model" folder:
 
-1. **Download Model (.h5) file**: Download ["best_model_extra_credit.h5"]([https://uflorida-my.sharepoint.com/:u:/g/personal/rashighosh_ufl_edu/EcLUUC2puhNCnz1ib9AOJ2gBgjWzHbVlFdiHi-voO0lMCw?e=9rtgQi](https://uflorida-my.sharepoint.com/:u:/g/personal/youval_kashuv_ufl_edu/EdGStqhiUQJDpOHhSQDkOvYB48kohYQn0q_I6HyDrUoY6A?e=3p3UzW)) and add to the same folder where you are running the notebook. Password for the file is FundML2023.
+1. **Download Model (.h5) file**: Download ["best_model_extra_credit.h5"](https://uflorida-my.sharepoint.com/:u:/g/personal/rashighosh_ufl_edu/EcLUUC2puhNCnz1ib9AOJ2gBgjWzHbVlFdiHi-voO0lMCw?e=9rtgQi](https://uflorida-my.sharepoint.com/:u:/g/personal/youval_kashuv_ufl_edu/EdGStqhiUQJDpOHhSQDkOvYB48kohYQn0q_I6HyDrUoY6A?e=3p3UzW) and add to the same folder where you are running the notebook. Password for the file is FundML2023.
 2. **Open the Notebook**: Within the extra_credit folder, navigate and open the `execution.ipynb` file in this repository with the `tensorflow-2.14` kernel on HiPerGator.
 
-3. **Place the best_model_extra_credit.h5 in the extra_credit directory.** It is important to keep this file in the extra_credit folder (same directory level as where the `execution.ipynb` is located).
+3. **Place the best_model_extra_credit.h5 in the extra_credit directory.** It is important to keep this file in the extra_credit_model folder (same directory level as where the `execution.ipynb` is located).
 
 4.  **Update File Paths**: It is essential to replace the default file paths in the notebook with the paths to your specific test data and test labels. Ensure these paths correctly point to your files.
 
