@@ -33,7 +33,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-A full report of this project can be found in the file report.pdf.
+A full report of this project can be found in the file ["report.pdf"](https://github.com/UF-FundMachineLearning-Fall23/final-project-code-report-team-jyr/blob/main/report.pdf).
 
 <!-- GETTING STARTED -->
 ## Getting Started
